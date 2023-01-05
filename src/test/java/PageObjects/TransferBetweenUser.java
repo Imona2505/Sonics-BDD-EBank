@@ -29,7 +29,7 @@ public class TransferBetweenUser {
     @CacheLookup
     WebElement AccountNumber;
 
-    @FindBy(xpath="//*[@class='two-in-row']/..//*[@class='native-input amount ng-pristine ng-invalid ng-touched']")
+    @FindBy(xpath="//input[@*='outgoingAmount']")
     @CacheLookup
     WebElement AmountToTransfer;
 
@@ -56,7 +56,9 @@ public class TransferBetweenUser {
         AccountNumber.sendKeys(Account);
         Thread.sleep(1000);
         AmountToTransfer.sendKeys(Amount);
+        Thread.sleep(2000);
         ContinueButton.click();
+        Thread.sleep(2000);
         ConfirmButton.click();
 
     }
