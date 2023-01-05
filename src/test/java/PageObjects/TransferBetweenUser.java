@@ -5,11 +5,11 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import static Utilities.Hooks.driver;
 public class TransferBetweenUser {
-    @FindBy(xpath ="//*[@class='aside__row active']")
+    @FindBy(xpath ="//*[@class='aside__row active']/..//*[@class='aside__row']/..//*[@class='aside__label main_color transfer']")
     @CacheLookup
     WebElement Transfers;
 
-    @FindBy(xpath = "//*[contains(text(),'transfer-between-users')]")
+    @FindBy(xpath = "//*[@class='sections-container']/..//*[contains(text(),'Transfer Between Users')]")
     @CacheLookup
     WebElement TransferBetweenUsers;
 
@@ -17,7 +17,7 @@ public class TransferBetweenUser {
     @CacheLookup
     WebElement SelectAccount;
 
-    @FindBy(xpath = " //*[@id='a14eea40aabb']")
+    @FindBy(xpath = " //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']")
     @CacheLookup
     WebElement SelectCheckingAccount;
 
@@ -29,7 +29,7 @@ public class TransferBetweenUser {
     @CacheLookup
     WebElement AccountNumber;
 
-    @FindBy(xpath=" //*[@class='native-input amount ng-pristine ng-invalid with-currency ng-touched']")
+    @FindBy(xpath="//*[@class='two-in-row__input-field error-field']/..//*[@class='native-input amount ng-pristine ng-invalid ng-touched']")
     @CacheLookup
     WebElement AmountToTransfer;
 
@@ -45,13 +45,16 @@ public class TransferBetweenUser {
     WebElement SuccessMessage;
 
 
-    public void TransferBetweenUser(String Username, String Account, String Amount){
+    public void TransferBetweenUser(String Username, String Account, String Amount) throws InterruptedException {
+        Thread.sleep(5000);
         Transfers.click();
+        Thread.sleep(5000);
         TransferBetweenUsers.click();
         SelectAccount.click();
         SelectCheckingAccount.click();
         UserName.sendKeys(Username);
         AccountNumber.sendKeys(Account);
+        Thread.sleep(1000);
         AmountToTransfer.sendKeys(Amount);
         ContinueButton.click();
         ConfirmButton.click();

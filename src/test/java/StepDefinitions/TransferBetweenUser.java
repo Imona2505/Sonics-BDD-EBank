@@ -16,9 +16,10 @@ public class TransferBetweenUser {
         public void user_is_on_homepage() {
 
             openingHomePage.homepage();
+            openingHomePage.loginwith("Demo-User", "Demo-Access1");
         }
         @When("User transfers money between users")
-    public void user_transfers_money_between_users() {
+    public void user_transfers_money_between_users()throws InterruptedException {
         transferBetweenUser.TransferBetweenUser("mjohnson", "EBQ12123423456", "500");
     }
     @Then("User successfully transferred money")
