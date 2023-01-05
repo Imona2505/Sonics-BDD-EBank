@@ -29,7 +29,7 @@ public class TransferBetweenUser {
     @CacheLookup
     WebElement AccountNumber;
 
-    @FindBy(xpath="//*[@class='two-in-row__input-field error-field']/..//*[@class='native-input amount ng-pristine ng-invalid ng-touched']")
+    @FindBy(xpath="//*[@class='two-in-row']/..//*[@class='native-input amount ng-pristine ng-invalid ng-touched']")
     @CacheLookup
     WebElement AmountToTransfer;
 
