@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+
+
 public class CardFundingTransfer {
   @FindBy (xpath = "//*[@class='aside__row active']/..//*[@class='aside__label main_color transfer']")
   @CacheLookup
@@ -51,13 +53,15 @@ public class CardFundingTransfer {
   @CacheLookup
   WebElement confirm;
 
-  @FindBy (xpath = "//*[contains(text(),'')]")
+  @FindBy (xpath = "//*[@class='success-popup']")
   @CacheLookup
   WebElement successMessage;
 
 
-  public void process (String TemplateName){
+  public void process(String TemplateName) throws InterruptedException {
+    Thread.sleep(3000);
     transfers.click();
+    Thread.sleep(3000);
     cardFundingTransfer.click();
     debitFrom.click();
     checking.click();
@@ -73,6 +77,8 @@ public class CardFundingTransfer {
 
   }
   public boolean isSuccessMessagePresent(){
-    String expected= "";
+    String expected= "Your request has been sent for approval";
+    String actual= this.successMessage.getText();
+    return (expected.equals(actual));
   }
 }
