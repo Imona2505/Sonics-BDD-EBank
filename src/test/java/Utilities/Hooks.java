@@ -25,10 +25,9 @@ public class Hooks {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
     }
-    @After
     public void tearDown(){
 
-        driver.quit();
+        //driver.quit();
     }
 }
 
