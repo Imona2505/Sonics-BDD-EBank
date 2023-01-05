@@ -1,0 +1,28 @@
+package StepDefinitions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.support.PageFactory;
+
+import static Utilities.Hooks.driver;
+
+public class CardFundingTransfer {
+    PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
+    PageObjects.CardFundingTransfer cardFundingTransfer = PageFactory.initElements(driver, PageObjects.CardFundingTransfer.class);
+    @Given("User is on homepage")
+    public void user_is_on_homepage(){
+        openingHomePage.homepage();
+    }
+    @When("User tries to transfer between cards")
+    public void user_tries_to_transfer_between_cards() {
+        openingHomePage.loginwith("Demo-User", "Demo-Access1");
+         
+    }
+    @Then("User should successfully transfer")
+    public void user_should_successfully_transfer() {
+
+    }
+
+
+}
