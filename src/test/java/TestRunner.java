@@ -1,6 +1,5 @@
-import io.cucumber.junit.Cucumber;
-import io.cucumber.testng.CucumberOptions;
 
+import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
