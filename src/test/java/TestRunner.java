@@ -1,8 +1,7 @@
-import io.cucumber.junit.Cucumber;
-import io.cucumber.testng.CucumberOptions;
-import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+import io.cucumber.testng.CucumberOptions;
+
+
 @CucumberOptions(
         features = {"src/test/java/features"},
         tags = "@regression",

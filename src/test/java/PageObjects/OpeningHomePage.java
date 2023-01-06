@@ -25,7 +25,7 @@ public class OpeningHomePage {
 
 
 
-    String url = " https://demo.ebanq.com/";
+    String url = "https://demo.ebanq.com/";
 
     public void homepage(){
         driver.get(url);
