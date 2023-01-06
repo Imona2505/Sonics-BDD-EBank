@@ -7,11 +7,11 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class CardFundingTransfer {
-  @FindBy (xpath = "//*[@class='aside__row active']/..//*[@class='aside__label main_color transfer']")
+  @FindBy(xpath ="//*[@class='aside__row active']/..//*[@class='aside__row']/..//*[@class='aside__label main_color transfer']")
   @CacheLookup
   WebElement transfers;
 
-  @FindBy (xpath = "//*[contains(text(),'Card Funding Transfer')]")
+  @FindBy (xpath = "//*[@class='sections-container']/..//*[contains(text(),'Card Funding Transfer')]")
   @CacheLookup
   WebElement cardFundingTransfer;
 
@@ -29,27 +29,20 @@ public class CardFundingTransfer {
   @CacheLookup
   WebElement creditTo;
 
-  @FindBy (xpath = "//*[contains(@id,'a64258c86a22')]")
+  @FindBy (xpath = "//*[@class='ng-dropdown-panel-items scroll-host']/..//*[@class='ng-option']")
   @CacheLookup
   WebElement creditCard;
 
-  @FindBy (xpath = "//*[contains(@class,'currency-icon')]")
+  @FindBy (xpath = "//input[@*='outgoingAmount']")
   @CacheLookup
   WebElement amountToTransfer;
 
-  @FindBy (xpath = "//*[contains(@class,''checkbox-checkmark')]")
-  @CacheLookup
-  WebElement checkbox;
-
-  @FindBy (xpath = "//*[contains(@id,'template-name')]")
-  @CacheLookup
-  WebElement templateName;
 
   @FindBy (xpath = "//*[@class='def-btn-success main_color']")
   @CacheLookup
   WebElement continueButton;
 
-  @FindBy (xpath = "//*[contains(text(),'Confirm')]")
+  @FindBy (xpath = "//*[@class='def-btn-success main_color']")
   @CacheLookup
   WebElement confirm;
 
@@ -58,19 +51,19 @@ public class CardFundingTransfer {
   WebElement successMessage;
 
 
-  public void process(String TemplateName) throws InterruptedException {
-    Thread.sleep(3000);
+  public void process(String AmountToTransfer) throws InterruptedException {
+    Thread.sleep(5000);
     transfers.click();
-    Thread.sleep(3000);
+    Thread.sleep(5000);
     cardFundingTransfer.click();
     debitFrom.click();
     checking.click();
     creditTo.click();
     creditCard.click();
-    amountToTransfer.click();
-    templateName.sendKeys(TemplateName);
-    checkbox.click();
+    amountToTransfer.sendKeys(AmountToTransfer);
+    Thread.sleep(5000);
     continueButton.click();
+    Thread.sleep(5000);
     confirm.click();
 
 
