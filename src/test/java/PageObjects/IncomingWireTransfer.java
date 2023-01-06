@@ -36,7 +36,7 @@ public class IncomingWireTransfer {
     @CacheLookup
     WebElement incomingWireTransfer;
 
-    @FindBy(xpath = "//*[contains(text(),'EBQEMI2A')]")
+    @FindBy(xpath = "//*[@class='line sub-heading']/..//*[@class='fields']/.//*[contains(text(),'EBQEMI2A')]")
     @CacheLookup
     WebElement successMessage;
 
@@ -53,7 +53,7 @@ public class IncomingWireTransfer {
     }
     public boolean isSuccessMessagePresent(){
         String expected = "EBQEMI2A";
-       // wait.until(ExpectedConditions.textToBe(By.xpath("///*[@class='fields']/..//*[contains(text(),'EBQEMI2A')]"),expected));
+        //wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='fields']/..//*[contains(text(),'EBQEMI2A')]"),expected));
         String actual= this.successMessage.getText();
         return (expected.equals(actual));
     }
