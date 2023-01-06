@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import static Utilities.Hooks.driver;
 import static org.junit.Assert.assertTrue;
 
+
 public class IncomingWireTransfer {
 
     PageObjects.IncomingWireTransfer incomingWireTransfer = PageFactory.initElements(driver, PageObjects.IncomingWireTransfer.class);

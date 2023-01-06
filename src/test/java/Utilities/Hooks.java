@@ -15,7 +15,7 @@ public class Hooks {
     public static WebDriverWait wait;
 
     @Before
-    public void setUp(){
+    public void setUp() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);
@@ -24,6 +24,8 @@ public class Hooks {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.manage().window().maximize();
+
+        Thread.sleep(5000);
     }
     public void tearDown(){
 
