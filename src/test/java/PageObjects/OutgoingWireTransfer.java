@@ -67,7 +67,8 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement state;
 
-    @FindBy(xpath ="//ng-select[@*='bankCountry']")
+
+    @FindBy(xpath ="//input[@*='daktc']")
     @CacheLookup
     WebElement country2;
 
