@@ -27,7 +27,7 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement savings;
 
-    @FindBy(xpath = "//*[@class='input-container__label required']/..//*[@class='native-input bic-input ng-pristine ng-invalid ng-touched']")
+    @FindBy(xpath = "//*[@id='beneficiary-bankSwiftBic']")
     @CacheLookup
     WebElement swift;
 
@@ -67,9 +67,13 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement state;
 
-    @FindBy(xpath ="//*[@class='simple ng-select ng-select-single ng-select-searchable ng-untouched ng-pristine ng-invalid ng-select-opened ng-select-bottom']/..//*[@class='ng-placeholder']")
+    @FindBy(xpath ="//*[@*='customerCountry']")
     @CacheLookup
     WebElement country2;
+
+    @FindBy(xpath = "//*[contains(text(),'United States of America')]")
+    @CacheLookup
+    WebElement unitedStatesOfAmerica;
 
     @FindBy(xpath = "//*[@id='acc-iban']")
     @CacheLookup
@@ -83,9 +87,13 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement amount;
 
-    @FindBy(xpath = "//*[@id='beneficiary-country-code']")
+    @FindBy(xpath = "//*[@*='referenceCurrencyCode']")
     @CacheLookup
     WebElement currency;
+
+    @FindBy(xpath = "//*[contains(text(),'USD')]")
+    @CacheLookup
+    WebElement usd;
 
     @FindBy(xpath = "//*[@class=\"def-btn-success main_color\"]")
     @CacheLookup
@@ -99,6 +107,9 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement successMessage;
 
+    @FindBy(xpath = "//*[@id='customer-city']")
+    @CacheLookup
+    WebElement city;
 
 
 
@@ -107,28 +118,41 @@ public class OutgoingWireTransfer {
 
 
 
-    public void outgoingWireTransfer(String Swift, String CustomerName, String CustomerAddress, String State, String Country2,String AccountNum, String Message, String Amount, String Currency) throws InterruptedException {
+
+    public void outgoingWireTransfer(String Swift, String CustomerName, String CustomerAddress,String City, String State, String Country2,String AccountNum, String Message, String Amount, String Currency) throws InterruptedException {
         Thread.sleep(5000);
         transfers.click();
         Thread.sleep(5000);
         outgoingWireTransfer.click();
         debitForm.click();
         savings.click();
-       swift.sendKeys();
+        //Thread.sleep(5000);
+
+       swift.sendKeys(Swift);
        // name.sendKeys();
        // address.sendKeys();
         //location.sendKeys();
       //  rtn.sendKeys();
         //customerCountry.sendKeys();
-        customerName.sendKeys();
-        customerAddress.sendKeys();
-        state.sendKeys();
-        country2.sendKeys();
-        accountNum.sendKeys();
-        message.sendKeys();
-        amount.sendKeys();
-        currency.sendKeys();
+        customerName.sendKeys(CustomerName);
+        customerAddress.sendKeys(CustomerAddress);
+        city.sendKeys(City);
+        state.sendKeys(State);
+        country2.click();
+
+        unitedStatesOfAmerica.click();
+
+        //country2.sendKeys(Country2);
+
+        accountNum.sendKeys(AccountNum);
+        message.sendKeys(Message);
+        amount.sendKeys(Amount);
+        currency.click();
+       // currency.sendKeys(Currency);
+        usd.click();
+        Thread.sleep(5000);
         continueB.click();
+        Thread.sleep(5000);
         continueButton.click();
 
     }
