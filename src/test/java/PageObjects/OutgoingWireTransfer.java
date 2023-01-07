@@ -67,10 +67,13 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement state;
 
-
-    @FindBy(xpath ="//input[@*='daktc']")
+    @FindBy(xpath ="//*[@*='customerCountry']")
     @CacheLookup
     WebElement country2;
+
+    @FindBy(xpath = "//*[contains(text(),'United States of America')]")
+    @CacheLookup
+    WebElement unitedStatesOfAmerica;
 
     @FindBy(xpath = "//*[@id='acc-iban']")
     @CacheLookup
@@ -84,9 +87,13 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement amount;
 
-    @FindBy(xpath = "//*[@id='beneficiary-country-code']")
+    @FindBy(xpath = "//*[@*='referenceCurrencyCode']")
     @CacheLookup
     WebElement currency;
+
+    @FindBy(xpath = "//*[contains(text(),'USD')]")
+    @CacheLookup
+    WebElement usd;
 
     @FindBy(xpath = "//*[@class=\"def-btn-success main_color\"]")
     @CacheLookup
@@ -131,12 +138,21 @@ public class OutgoingWireTransfer {
         customerAddress.sendKeys(CustomerAddress);
         city.sendKeys(City);
         state.sendKeys(State);
-        country2.sendKeys(Country2);
+        country2.click();
+
+        unitedStatesOfAmerica.click();
+
+        //country2.sendKeys(Country2);
+
         accountNum.sendKeys(AccountNum);
         message.sendKeys(Message);
         amount.sendKeys(Amount);
-        currency.sendKeys(Currency);
+        currency.click();
+       // currency.sendKeys(Currency);
+        usd.click();
+        Thread.sleep(5000);
         continueB.click();
+        Thread.sleep(5000);
         continueButton.click();
 
     }
