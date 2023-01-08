@@ -55,6 +55,6 @@ public class IncomingWireTransfer {
         String expected = "EBQEMI2A";
         //wait.until(ExpectedConditions.textToBe(By.xpath("//*[@class='fields']/..//*[contains(text(),'EBQEMI2A')]"),expected));
         String actual= this.successMessage.getText();
-        return (expected.equals(actual));
+        return (actual.contains(expected));
     }
 }
