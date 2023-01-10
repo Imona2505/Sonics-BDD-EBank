@@ -28,8 +28,7 @@ public class Hooks {
         Thread.sleep(5000);
     }
     public void tearDown(){
-
-        //driver.quit();
+        driver.quit();
     }
 }
 
