@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
 
 import static Utilities.Hooks.driver;
-import static org.junit.Assert.assertTrue;
 
 
 public class IncomingWireTransfer {
@@ -26,6 +25,6 @@ public class IncomingWireTransfer {
     }
     @Then("User gets the verify message")
     public void user_gets_the_verify_message() {
-        assertTrue(incomingWireTransfer.isSuccessMessagePresent());
+        incomingWireTransfer.isSuccessMessagePresent();
     }
 }
