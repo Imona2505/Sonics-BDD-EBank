@@ -23,60 +23,53 @@ public class TransferBetweenAccounts {
     WebElement selectCheckingAccount;
 
 
-    @FindBy(xpath = " //*[contains(@class,'large ng-select ng-select-single ng-select-opened ng-select-bottom')]']")
+    @FindBy(xpath = "//*[@class='ng-select-container']")
     @CacheLookup
-    WebElement selectsavingAccount;
+    WebElement selectSavingAccount;
 
 
-    @FindBy(xpath = " //*[contains(@id,'ad376c0f8a6d')]')]']")
+    @FindBy(xpath = "//*[@class='ng-dropdown-panel-items scroll-host']/..//*[contains(text(),'EBQ11223487456')]")
     @CacheLookup
     WebElement savingAccount;
-
-
 
     @FindBy(xpath="//input[@*='outgoingAmount']")
     @CacheLookup
     WebElement amountToTransfer;
 
-    @FindBy(xpath=" //*[@class='def-btn-success main_color']")
+    @FindBy(xpath= "//*[@class='def-btn-success main_color']")
     @CacheLookup
-    WebElement  continueButton;
+    WebElement continueButton;
 
-    @FindBy(xpath=" //*[@class='def-btn-success main_color']")
+    @FindBy(xpath= "//*[@class='def-btn-success main_color']")
     @CacheLookup
     WebElement confirmButton;
 
-    @FindBy(xpath = " //*[@class='success-popup']")
+    @FindBy(xpath = "//*[@class='success-popup']/..//*[contains(text(),'Your request has been sent for approval.')]")
     @CacheLookup
     WebElement successMessage;
 
 
-    public void TransferBetweenAccounts(String Account, String Account1, String Amount) throws InterruptedException {
+    public void transferBetweenAccounts(String Amount) throws InterruptedException {
         Thread.sleep(5000);
         Transfers.click();
         Thread.sleep(5000);
         TransferBetweenAccounts.click();
         selectAccount.click();
         selectCheckingAccount.click();
-        Thread.sleep(5000);
-        selectsavingAccount.click();
+        selectSavingAccount.click();
         savingAccount.click();
-        Thread.sleep(5000);
-        amountToTransfer.sendKeys();
-        Thread.sleep(2000);
+        amountToTransfer.sendKeys(Amount);
+        Thread.sleep(3000);
         continueButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         confirmButton.click();
 
 
     }
 
-
-
     public boolean isSuccessMessagePopUp() {
         String expected = "Your request has been sent for approval.";
         String actual = this.successMessage.getText();
-        return(actual.contains(expected));
+        return(actual.equals(expected));
     }
-
     }

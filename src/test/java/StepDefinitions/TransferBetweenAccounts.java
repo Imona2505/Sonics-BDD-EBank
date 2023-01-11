@@ -20,7 +20,7 @@ public class TransferBetweenAccounts {
 
     @When("User Transferred money")
     public void user_transferred_money() throws InterruptedException {
-       transferBetweenAccounts.TransferBetweenAccounts("EBQ11113487654",  "EBQ38495629375", "100");
+       transferBetweenAccounts.transferBetweenAccounts("100");
     }
     @Then("User gets success message")
     public void user_gets_success_message(){
