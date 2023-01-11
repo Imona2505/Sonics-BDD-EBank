@@ -29,7 +29,7 @@ public class Hooks {
     }
     public void tearDown(){
 
-        //driver.quit();
+        driver.quit();
     }
 }
 
