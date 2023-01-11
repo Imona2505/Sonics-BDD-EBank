@@ -13,65 +13,70 @@ public class TransferBetweenAccounts {
     @CacheLookup
     WebElement TransferBetweenAccounts;
 
-    @FindBy(xpath = " //*[@class='ng-select-container']")
+    @FindBy(xpath = " //*[@class='ng-value-container']")
     @CacheLookup
-    WebElement SelectAccount;
+    WebElement selectAccount;
 
 
     @FindBy(xpath = " //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']")
     @CacheLookup
-    WebElement SelectCheckingAccount;
+    WebElement selectCheckingAccount;
 
 
-    @FindBy(xpath = " //*[@class='ng-select-container']")
+    @FindBy(xpath = " //*[contains(@class,'large ng-select ng-select-single ng-select-opened ng-select-bottom')]']")
     @CacheLookup
-    WebElement SelectAccount1;
+    WebElement selectsavingAccount;
 
-    @FindBy(xpath = " //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']")
+
+    @FindBy(xpath = " //*[contains(@id,'ad376c0f8a6d')]')]']")
     @CacheLookup
-    WebElement SelectCheckingAccount1;
+    WebElement savingAccount;
+
 
 
     @FindBy(xpath="//input[@*='outgoingAmount']")
     @CacheLookup
-    WebElement AmountToTransfer;
+    WebElement amountToTransfer;
 
     @FindBy(xpath=" //*[@class='def-btn-success main_color']")
     @CacheLookup
-    WebElement  ContinueButton;
+    WebElement  continueButton;
 
     @FindBy(xpath=" //*[@class='def-btn-success main_color']")
     @CacheLookup
-    WebElement ConfirmButton;
+    WebElement confirmButton;
 
     @FindBy(xpath = " //*[@class='success-popup']")
     @CacheLookup
-    WebElement SuccessMessage;
+    WebElement successMessage;
 
 
-    public boolean TransferBetweenAccounts(String Account, String Account1, String Amount) throws InterruptedException {
+    public void TransferBetweenAccounts(String Account, String Account1, String Amount) throws InterruptedException {
         Thread.sleep(5000);
         Transfers.click();
         Thread.sleep(5000);
         TransferBetweenAccounts.click();
-        SelectAccount.click();
-        SelectCheckingAccount.click();
-        SelectAccount1.click();
-        SelectCheckingAccount1.click();
-        AmountToTransfer.click();
-        ContinueButton.click();
-        ConfirmButton.click();
+        selectAccount.click();
+        selectCheckingAccount.click();
+        Thread.sleep(5000);
+        selectsavingAccount.click();
+        savingAccount.click();
+        Thread.sleep(5000);
+        amountToTransfer.sendKeys();
+        Thread.sleep(2000);
+        continueButton.click();
+        Thread.sleep(2000);
+        confirmButton.click();
 
-
-
-
-            String expected = "Your request has been sent for approval.";
-            String actual = this.SuccessMessage.getText();
-            return (expected.equals(actual));
-        }
-
-
-    public void isSuccessMessagePopUp() {
 
     }
-}
+
+
+
+    public boolean isSuccessMessagePopUp() {
+        String expected = "Your request has been sent for approval.";
+        String actual = this.successMessage.getText();
+        return(actual.contains(expected));
+    }
+
+    }
