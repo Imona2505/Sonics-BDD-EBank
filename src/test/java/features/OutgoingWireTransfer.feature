@@ -1,3 +1,4 @@
+@regression
 Feature: Outgoing Wire Transfer
   Scenario: User successfully transfers money
     Given User is on the homepage
