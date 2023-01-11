@@ -1,3 +1,4 @@
+@regression
 Feature: Opening Homepage
   Scenario: User has access to homepage
     Given User is on the homepage
