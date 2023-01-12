@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
 
 import static Utilities.Hooks.driver;
-import static junit.framework.TestCase.assertTrue;
 
 public class CardFundingTransfer {
     PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
