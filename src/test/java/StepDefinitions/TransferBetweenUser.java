@@ -20,7 +20,7 @@ public class TransferBetweenUser {
         }
         @When("User transfers money between users")
     public void user_transfers_money_between_users()throws InterruptedException {
-        transferBetweenUser.TransferBetweenUser("mjohnson", "EBQ12123423456", "500");
+        transferBetweenUser.TransferBetweenUser("mjohnson", "EBQ12123423456", "1");
     }
     @Then("User successfully transferred money")
     public void user_successfully_transferred_money() {
