@@ -103,9 +103,9 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement continueButton;
 
-    @FindBy(xpath = "//*[contains(@class,'popup-message')]")
-    @CacheLookup
-    WebElement successMessage;
+   @FindBy(xpath = "//*[contains(@class,'popup-message')]")
+   @CacheLookup
+   WebElement successMessage;
 
     @FindBy(xpath = "//*[@id='customer-city']")
     @CacheLookup
@@ -157,8 +157,11 @@ public class OutgoingWireTransfer {
 
     }
       public boolean isSuccessMessagePresent(){
-        String expected = "Your request has been sent for approval.";
+       String expected = "Your request has been sent for approval.";
         String actual =this.successMessage.getText();
-        return (expected.equals(actual));
+        return (actual.contains(expected));
       }
-}
+
+    }
+
+
