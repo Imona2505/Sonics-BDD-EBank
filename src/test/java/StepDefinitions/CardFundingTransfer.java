@@ -12,13 +12,14 @@ public class CardFundingTransfer {
     PageObjects.CardFundingTransfer cardFundingTransfer = PageFactory.initElements(driver, PageObjects.CardFundingTransfer.class);
     @Given("User is on  the homepage")
     public void user_is_on_the_homepage(){
-
+        openingHomePage.homepage();
+        openingHomePage.loginwith("Demo-User", "Demo-Access1");
     }
     @When("User tries to transfer between cards")
     public void user_tries_to_transfer_between_cards()throws InterruptedException {
 
         openingHomePage.loginwith("Demo-User", "Demo-Access1");
-        cardFundingTransfer.process("1500");
+        cardFundingTransfer.process("1");
     }
     @Then("User should successfully transfer")
     public void user_should_successfully_transfer() {
