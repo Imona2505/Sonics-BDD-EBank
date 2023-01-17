@@ -1,52 +1,56 @@
 package PageObjects;
 
+import io.restassured.http.Cookies;
+import io.restassured.response.Response;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+import static io.restassured.RestAssured.given;
 
 
 public class CardFundingTransfer {
-  @FindBy(xpath ="//*[@class='aside__row active']/..//*[@class='aside__row']/..//*[@class='aside__label main_color transfer']")
+
+  @FindBy(xpath = "//*[@class='aside__row active']/..//*[@class='aside__row']/..//*[@class='aside__label main_color transfer']")
   @CacheLookup
   WebElement transfers;
 
-  @FindBy (xpath = "//*[@class='sections-container']/..//*[contains(text(),'Card Funding Transfer')]")
+  @FindBy(xpath = "//*[@class='sections-container']/..//*[contains(text(),'Card Funding Transfer')]")
   @CacheLookup
   WebElement cardFundingTransfer;
 
-  @FindBy (xpath = "//*[contains(text(),'Select account')]")
+  @FindBy(xpath = "//*[contains(text(),'Select account')]")
   @CacheLookup
   WebElement debitFrom;
 
   //Actions action = new Actions(driver);
 
-  @FindBy (xpath = "//*[contains(text(),'Checking')]")
+  @FindBy(xpath = "//*[contains(text(),'Checking')]")
   @CacheLookup
   WebElement checking;
 
-  @FindBy (xpath = "//*[contains(text(),'Select card')]")
+  @FindBy(xpath = "//*[contains(text(),'Select card')]")
   @CacheLookup
   WebElement creditTo;
 
-  @FindBy (xpath = "//*[@class='ng-dropdown-panel-items scroll-host']/..//*[@class='ng-option']")
+  @FindBy(xpath = "//*[@class='ng-dropdown-panel-items scroll-host']/..//*[@class='ng-option']")
   @CacheLookup
   WebElement creditCard;
 
-  @FindBy (xpath = "//input[@*='outgoingAmount']")
+  @FindBy(xpath = "//input[@*='outgoingAmount']")
   @CacheLookup
   WebElement amountToTransfer;
 
 
-  @FindBy (xpath = "//*[@class='def-btn-success main_color']")
+  @FindBy(xpath = "//*[@class='def-btn-success main_color']")
   @CacheLookup
   WebElement continueButton;
 
-  @FindBy (xpath = "//*[@class='def-btn-success main_color']")
+  @FindBy(xpath = "//*[@class='def-btn-success main_color']")
   @CacheLookup
   WebElement confirm;
 
-  @FindBy (xpath = "//*[@class='success-popup']")
+  @FindBy(xpath = "//*[@class='success-popup']")
   @CacheLookup
   WebElement successMessage;
 
@@ -67,11 +71,17 @@ public class CardFundingTransfer {
     confirm.click();
 
 
-
   }
-  public boolean isSuccessMessagePresent(){
-    String expected= "Your request has been sent for approval";
-    String actual= this.successMessage.getText();
+  private String transactionId;
+  public String getTransactionId(){
+  return transactionId;
+  }
+
+  public boolean isSuccessMessagePresent() {
+    String expected = "Your request has been sent for approval";
+    String actual = this.successMessage.getText();
+    transactionId = actual.split("#")[1].split("\n")[0].trim();
+    System.out.println(transactionId);
     return (expected.equals(actual));
   }
 }

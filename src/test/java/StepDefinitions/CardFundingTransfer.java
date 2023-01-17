@@ -1,11 +1,15 @@
 package StepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.http.Cookies;
+import io.restassured.response.Response;
 import org.openqa.selenium.support.PageFactory;
 
 import static Utilities.Hooks.driver;
+import static io.restassured.RestAssured.given;
 
 public class CardFundingTransfer {
     PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
@@ -21,10 +25,35 @@ public class CardFundingTransfer {
         openingHomePage.loginwith("Demo-User", "Demo-Access1");
         cardFundingTransfer.process("1");
     }
+
     @Then("User should successfully transfer")
     public void user_should_successfully_transfer() {
         cardFundingTransfer.isSuccessMessagePresent();
     }
 
+    @And("Admin approves the transaction")
+    public void admin_approves_a_transaction(){
+        Response response =
+                given().contentType("application/json").log().all()
+                        .body("{\n" +
+                                "    \"data\": {\n" +
+                                "        \"email\": \"Bank-Admin\",\n" +
+                                "        \"password\": \"Demo-Access1\"\n" +
+                                "    }\n" +
+                                "}")
+                        .when().post("https://api-demo.ebanq.com/users/public/v1/auth/signin")
+                        .then().log().all().statusCode(200).extract().response();
+        System.out.println(response);
+
+        String token = response.path("data.accessToken");
+
+        Cookies cookies = response.getDetailedCookies();
+
+        Response response1 =
+                given().contentType("application/json").header("Authorization","Bearer "+token).cookies(cookies).log().all()
+                        .when().post("https://api-demo.ebanq.com/accounts/private/v1/admin/requests/execute/"+cardFundingTransfer.getTransactionId())
+                        .then().log().all().statusCode(200).extract().response();
+       // System.out.println(response1);
+    }
 
 }
