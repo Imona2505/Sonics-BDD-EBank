@@ -13,6 +13,7 @@ public class IncomingWireTransfer {
     PageObjects.IncomingWireTransfer incomingWireTransfer = PageFactory.initElements(driver, PageObjects.IncomingWireTransfer.class);
     PageObjects.IncomingWireTransferPage incomingWireTransferPage = PageFactory.initElements(driver, PageObjects.IncomingWireTransferPage.class);
 
+
     @Given("User is logs in")
     public void user_is_logs_in() {
          incomingWireTransfer.homepage();

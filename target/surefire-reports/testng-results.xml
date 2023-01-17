@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="3" failed="3" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-01-11T19:12:53 EST" name="Surefire suite" finished-at="2023-01-11T19:16:38 EST" duration-ms="224403">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-01-11T19:12:53 EST" name="Surefire test" finished-at="2023-01-11T19:16:38 EST" duration-ms="224403">
+      <class name="TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:12:53 EST" name="setUpClass" finished-at="2023-01-11T19:12:55 EST" duration-ms="1618" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@41582899]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:12:55 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:13:44 EST" duration-ms="49348" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User should be able to transfer between the cards"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Card Funding Transfer"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Checking')]"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5c7c0f9439892add243a0d165b10ed66, findElement {using=xpath, value=//*[contains(text(),'Checking')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59626/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c7c0f9439892add243a0d165b10ed66]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Checking')]"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5c7c0f9439892add243a0d165b10ed66, findElement {using=xpath, value=//*[contains(text(),'Checking')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59626/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c7c0f9439892add243a0d165b10ed66
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy25.click(Unknown Source)
+at PageObjects.CardFundingTransfer.process(CardFundingTransfer.java:60)
+at StepDefinitions.CardFundingTransfer.user_tries_to_transfer_between_cards(CardFundingTransfer.java:22)
+at ✽.User tries to transfer between cards(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/CardFundingTransfer.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:13:44 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:14:09 EST" duration-ms="24146" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Incoming Wire Transfer"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Incoming Wire Transfer"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:14:09 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:14:23 EST" duration-ms="14781" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User has access to homepage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Opening Homepage"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:14:23 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:15:09 EST" duration-ms="45112" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User successfully transfers money"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Outgoing Wire Transfer"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class='ng-option ng-option-marked']/..//*[@class='select-value']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [edb64327962a942f87e3c49365b7222e, findElement {using=xpath, value=//*[@class='ng-option ng-option-marked']/..//*[@class='select-value']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60008/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: edb64327962a942f87e3c49365b7222e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@class='ng-option ng-option-marked']/..//*[@class='select-value']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [edb64327962a942f87e3c49365b7222e, findElement {using=xpath, value=//*[@class='ng-option ng-option-marked']/..//*[@class='select-value']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60008/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: edb64327962a942f87e3c49365b7222e
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy25.click(Unknown Source)
+at PageObjects.OutgoingWireTransfer.outgoingWireTransfer(OutgoingWireTransfer.java:128)
+at StepDefinitions.OutgoingWireTransfer.user_transfers_money(OutgoingWireTransfer.java:19)
+at ✽.User transfers money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/OutgoingWireTransfer.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:15:09 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:15:51 EST" duration-ms="42140" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User Successfully Transferred money"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Transfer Between Accounts"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":" //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c1c98f56889c11c6b3d7cef0877665fb, findElement {using=xpath, value= //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60256/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c1c98f56889c11c6b3d7cef0877665fb]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":" //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']"}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c1c98f56889c11c6b3d7cef0877665fb, findElement {using=xpath, value= //*[@class='ng-option ng-option-marked']/..//*[@class='select-value']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60256/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c1c98f56889c11c6b3d7cef0877665fb
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy25.click(Unknown Source)
+at PageObjects.TransferBetweenAccounts.transferBetweenAccounts(TransferBetweenAccounts.java:58)
+at StepDefinitions.TransferBetweenAccounts.user_transferred_money(TransferBetweenAccounts.java:23)
+at ✽.User Transferred money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/TransferBetweenAccounts.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:15:51 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-01-11T19:16:37 EST" duration-ms="46783" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User able to transfer money between users"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Transfer money between users"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner@957e06]" started-at="2023-01-11T19:16:37 EST" name="tearDownClass" finished-at="2023-01-11T19:16:38 EST" duration-ms="203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

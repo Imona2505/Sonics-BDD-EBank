@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/3/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Jan 11 19:12:53 EST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>224 seconds (224403 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User successfully transfers money", "Outgoing Wire Transfer"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [edb64327962a942f87e3c49365b7222e, findElement {using=xpath, value=//*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60008/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: edb64327962a942f87e3c49365b7222e
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.OutgoingWireTransfer.outgoingWireTransfer(OutgoingWireTransfer.java:128)
+	at StepDefinitions.OutgoingWireTransfer.user_transfers_money(OutgoingWireTransfer.java:19)
+	at ?.User transfers money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/OutgoingWireTransfer.feature:5)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2040477002", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2040477002'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [edb64327962a942f87e3c49365b7222e, findElement {using=xpath, value=//*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60008}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60008/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: edb64327962a942f87e3c49365b7222e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.OutgoingWireTransfer.outgoingWireTransfer(OutgoingWireTransfer.java:128)
+	at StepDefinitions.OutgoingWireTransfer.user_transfers_money(OutgoingWireTransfer.java:19)
+	at ?.User transfers money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/OutgoingWireTransfer.feature:5)
+</pre></div></td>
+<td>45</td>
+<td>TestRunner@957e06</td></tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to transfer between the cards", "Card Funding Transfer"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;Checking&apos;)]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5c7c0f9439892add243a0d165b10ed66, findElement {using=xpath, value=//*[contains(text(),&apos;Checking&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59626/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c7c0f9439892add243a0d165b10ed66
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.CardFundingTransfer.process(CardFundingTransfer.java:60)
+	at StepDefinitions.CardFundingTransfer.user_tries_to_transfer_between_cards(CardFundingTransfer.java:22)
+	at ?.User tries to transfer between cards(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/CardFundingTransfer.feature:5)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace204273047", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace204273047'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;Checking&apos;)]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5c7c0f9439892add243a0d165b10ed66, findElement {using=xpath, value=//*[contains(text(),&apos;Checking&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:59626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59626/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5c7c0f9439892add243a0d165b10ed66
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.CardFundingTransfer.process(CardFundingTransfer.java:60)
+	at StepDefinitions.CardFundingTransfer.user_tries_to_transfer_between_cards(CardFundingTransfer.java:22)
+	at ?.User tries to transfer between cards(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/CardFundingTransfer.feature:5)
+</pre></div></td>
+<td>49</td>
+<td>TestRunner@957e06</td></tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User Successfully Transferred money", "Transfer Between Accounts"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot; //*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c1c98f56889c11c6b3d7cef0877665fb, findElement {using=xpath, value= //*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60256/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c1c98f56889c11c6b3d7cef0877665fb
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.TransferBetweenAccounts.transferBetweenAccounts(TransferBetweenAccounts.java:58)
+	at StepDefinitions.TransferBetweenAccounts.user_transferred_money(TransferBetweenAccounts.java:23)
+	at ?.User Transferred money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/TransferBetweenAccounts.feature:5)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace297795507", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace297795507'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot; //*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]&quot;}
+  (Session info: chrome=108.0.5359.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.5.3&apos;, revision: &apos;4b786a1e430&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.17&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c1c98f56889c11c6b3d7cef0877665fb, findElement {using=xpath, value= //*[@class=&apos;ng-option ng-option-marked&apos;]/..//*[@class=&apos;select-value&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.126, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\12153\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60256}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60256/devtoo..., se:cdpVersion: 108.0.5359.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c1c98f56889c11c6b3d7cef0877665fb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at PageObjects.TransferBetweenAccounts.transferBetweenAccounts(TransferBetweenAccounts.java:58)
+	at StepDefinitions.TransferBetweenAccounts.user_transferred_money(TransferBetweenAccounts.java:23)
+	at ?.User Transferred money(file:///C:/Users/12153/OneDrive/Documents/GitHub/Sonics-BDD-EBank/src/test/java/features/TransferBetweenAccounts.feature:5)
+</pre></div></td>
+<td>42</td>
+<td>TestRunner@957e06</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User has access to homepage", "Opening Homepage"</td>
+<td></td>
+<td>14</td>
+<td>TestRunner@957e06</td></tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Incoming Wire Transfer", "Incoming Wire Transfer"</td>
+<td></td>
+<td>24</td>
+<td>TestRunner@957e06</td></tr>
+<tr>
+<td title='TestRunner.runScenario()'><b>runScenario</b><br>Test class: TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User able to transfer money between users", "Transfer money between users"</td>
+<td></td>
+<td>46</td>
+<td>TestRunner@957e06</td></tr>
+</table><p>
+</body>
+</html>

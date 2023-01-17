@@ -10,7 +10,6 @@ import static Utilities.Hooks.driver;
 public class OpeningHomePage {
     PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
 
-    @Given("User is on the homepage")
     public void user_is_on_the_homepage() {
 
         openingHomePage.homepage();

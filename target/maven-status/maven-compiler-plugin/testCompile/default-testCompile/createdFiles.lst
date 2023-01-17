@@ -1,0 +1,15 @@
+PageObjects\TransferBetweenAccounts.class
+StepDefinitions\TransferBetweenUser.class
+Utilities\Hooks.class
+StepDefinitions\IncomingWireTransfer.class
+StepDefinitions\OutgoingWireTransfer.class
+PageObjects\OpeningHomePage.class
+StepDefinitions\TransferBetweenAccounts.class
+StepDefinitions\CardFundingTransfer.class
+PageObjects\TransferBetweenUser.class
+PageObjects\OutgoingWireTransfer.class
+PageObjects\IncomingWireTransferPage.class
+StepDefinitions\OpeningHomePage.class
+PageObjects\CardFundingTransfer.class
+PageObjects\IncomingWireTransfer.class
+TestRunner.class

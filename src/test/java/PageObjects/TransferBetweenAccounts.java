@@ -49,6 +49,12 @@ public class TransferBetweenAccounts {
     WebElement successMessage;
 
 
+    private String transactionId;
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
     public void transferBetweenAccounts(String Amount) throws InterruptedException {
         Thread.sleep(5000);
         Transfers.click();
@@ -70,6 +76,8 @@ public class TransferBetweenAccounts {
     public boolean isSuccessMessagePopUp() {
         String expected = "Your request has been sent for approval.";
         String actual = this.successMessage.getText();
-        return(actual.equals(expected));
+        transactionId=actual.split("#")[1].split("\n")[0].trim();
+
+        return (expected.equals(actual));
     }
     }
