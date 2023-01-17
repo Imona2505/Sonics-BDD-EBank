@@ -111,6 +111,10 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement city;
 
+    private String transactionId;
+    public String getTransactionId(){
+        return transactionId;
+    }
 
 
 
@@ -159,6 +163,7 @@ public class OutgoingWireTransfer {
       public boolean isSuccessMessagePresent(){
        String expected = "Your request has been sent for approval.";
         String actual =this.successMessage.getText();
+        transactionId = actual.split("#")[1].split("\n")[0].trim();
         return (actual.contains(expected));
       }
 

@@ -4,3 +4,4 @@ Feature: Outgoing Wire Transfer
     Given User is on the homepage
     When User transfers money
     Then User successfully transfer money
+    When Admin approves the transaction
