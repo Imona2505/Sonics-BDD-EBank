@@ -1,5 +1,6 @@
 package PageObjects;
 
+import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +50,11 @@ public class CardFundingTransfer {
   @FindBy (xpath = "//*[@class='success-popup']")
   @CacheLookup
   WebElement successMessage;
+  private  String transactionID;
+  public String getTransactionID() {
+    return transactionID;
+
+  }
 
 
   public void process(String AmountToTransfer) throws InterruptedException {
@@ -72,6 +78,10 @@ public class CardFundingTransfer {
   public boolean isSuccessMessagePresent(){
     String expected= "Your request has been sent for approval";
     String actual= this.successMessage.getText();
+
+     transactionID=actual.split("#")[1].split("\n")[0].trim();
+
     return (expected.equals(actual));
   }
+
 }
