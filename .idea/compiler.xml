@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Untitled" />
-        <module name="Sonics-BDD-EBank" />
         <module name="Sonics-BDD-EBANK" />
+        <module name="Sonics-BDD-EBank" />
       </profile>
     </annotationProcessing>
   </component>
