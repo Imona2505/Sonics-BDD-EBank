@@ -15,6 +15,7 @@ import static io.restassured.RestAssured.given;
 public class CardFundingTransfer {
     PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
     PageObjects.CardFundingTransfer cardFundingTransfer = PageFactory.initElements(driver, PageObjects.CardFundingTransfer.class);
+    @Given("User is on  the homepage")
     public void user_is_on_the_homepage(){
         openingHomePage.homepage();
         openingHomePage.loginwith("Demo-User", "Demo-Access1");
