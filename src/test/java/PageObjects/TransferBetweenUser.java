@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import static Utilities.Hooks.driver;
+import static io.restassured.RestAssured.given;
+
 public class TransferBetweenUser {
     @FindBy(xpath ="//*[@class='aside__row active']/..//*[@class='aside__row']/..//*[@class='aside__label main_color transfer']")
     @CacheLookup
@@ -45,6 +47,14 @@ public class TransferBetweenUser {
     WebElement SuccessMessage;
 
 
+
+    private String transactionId;
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+
     public void TransferBetweenUser(String Username, String Account, String Amount) throws InterruptedException {
         Thread.sleep(5000);
         Transfers.click();
@@ -65,6 +75,8 @@ public class TransferBetweenUser {
     public boolean isSuccessMessagePopUp(){
         String expected = "Your request has been sent for approval.";
         String actual = this.SuccessMessage.getText();
-                return (expected.equals(actual));
+         transactionId=actual.split("#")[1].split("\n")[0].trim();
+
+         return (expected.equals(actual));
     }
 }
