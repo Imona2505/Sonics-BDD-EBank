@@ -36,8 +36,8 @@ public class TransferBetweenUser {
         transferBetweenUser.isSuccessMessagePopUp();
     }
 
-    @When("Admin approves transaction")
-    public void admin_approves_transaction(){
+    @When("Admin approves transfer between users transaction")
+    public void admin_approves_transfer_between_users_transaction(){
         Response response=
                 given().contentType("application/json").log().all()
                         .body("{\n" +

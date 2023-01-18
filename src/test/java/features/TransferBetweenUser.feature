@@ -4,4 +4,4 @@ Feature: Transfer money between users
     Given User is on homepage
     When User transfers money between users
     Then User successfully transferred money
-    When Admin approves transaction
+    When Admin approves transfer between users transaction
