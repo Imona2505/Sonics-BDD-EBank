@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.Cookies;
@@ -17,6 +18,10 @@ import static io.restassured.RestAssured.given;
 public class OutgoingWireTransfer {
     PageObjects.OpeningHomePage openingHomePage = PageFactory.initElements(driver, PageObjects.OpeningHomePage.class);
     PageObjects.OutgoingWireTransfer outgoingWireTransfer = PageFactory.initElements(driver, PageObjects.OutgoingWireTransfer.class);
+    @Given("User is on the homepage")
+    public void user_is_on_the_homepage() {
+
+    }
     @When("User transfers money")
     public void user_transfers_money()throws InterruptedException {
 
