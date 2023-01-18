@@ -23,7 +23,7 @@ public class OutgoingWireTransfer {
     @CacheLookup
     WebElement debitForm;
 
-    @FindBy(xpath = "//*[@class='ng-option ng-option-marked']/..//*[@class='select-value']")
+    @FindBy(xpath = "//*[contains(@class,'ng-option ng-option-marked')]")
     @CacheLookup
     WebElement savings;
 
@@ -129,6 +129,7 @@ public class OutgoingWireTransfer {
         Thread.sleep(5000);
         outgoingWireTransfer.click();
         debitForm.click();
+        Thread.sleep(2000);
         savings.click();
         //Thread.sleep(5000);
 
